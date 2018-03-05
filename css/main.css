@@ -1,0 +1,33 @@
+
+.mainBodyWrapper {
+    margin: 0;
+    background: pink;
+}
+
+.mainHeader {
+    background: blue;
+}
+
+.mainContent {
+    background: green;
+}
+
+.mainFooter {
+    background: yellow;
+}
+
+.container_one {
+    /* width: 30%; */
+    background-color: blueviolet;
+}
+
+.container_two {
+    /* width: 30%; */
+    background-color:#32e9e9;
+}
+
+.container_three {
+    /* width: 30%; */
+    background-color:#e99a86;
+}
+
