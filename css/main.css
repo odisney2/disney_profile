@@ -1,15 +1,20 @@
+* {
+    box-sizing: border-box;
+}
 
 .mainBodyWrapper {
-    margin: 0;
-    background: pink;
+
+    background: purple;
 }
 
 .mainHeader {
     background: blue;
+    color: white;
 }
 
 .mainContent {
-    background: green;
+    margin: 0 auto;
+    padding-bottom: 10px;
 }
 
 .mainFooter {
@@ -19,6 +24,7 @@
 .container_one {
     /* width: 30%; */
     background-color: blueviolet;
+    
 }
 
 .container_two {
@@ -31,3 +37,92 @@
     background-color:#e99a86;
 }
 
+.container_all_title {
+    font-style: italic;
+    font-size: 2em;
+    text-align: center;
+    padding: 5px;
+}
+
+.container_all {
+    margin-top: 15px;
+    padding: 0.50em;
+}
+
+.mainHeaderInfo {
+    text-align: center;
+}
+.mainHeaderNav {
+    float: right;
+}
+
+.mainHeaderNav li {
+    display: inline-block;
+    margin-left: 10px;
+    background: aqua;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+.mainHeaderIcon {
+    float: left;
+}
+
+.mainHeaderIcon p {
+    font: bold;
+    font-size: 4em;
+}
+
+.mainContent h1 {
+    font-style: italic;
+    /* font-size: 3em; */
+    text-align: center;
+    padding: 10px 5px;
+}
+
+h1, 
+h2, p {
+    margin: 0;
+    /* padding: 0; */
+    
+}
+
+.clearfix::after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+
+/* .main-nav {
+    float: right;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 15px;
+} */
+
+
+/*******  Media Queries ********/
+
+@media (min-width: 500px) {
+    
+    .mainContent {
+        background-color: royalblue;
+    }
+}
+
+@media (min-width: 900px) {
+
+    .mainContent {
+        background-color: green;
+        width: 90%;
+    }
+
+    .container_all {
+        margin: 15px;
+    }
+
+    
+}
