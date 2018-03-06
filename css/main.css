@@ -2,6 +2,14 @@
     box-sizing: border-box;
 }
 
+li a{
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
 .mainBodyWrapper {
 
     background: purple;
@@ -49,19 +57,31 @@
     padding: 0.50em;
 }
 
+.mainHeaderContent {
+    background: chocolate;
+    border: 1px red solid;
+
+}
+
 .mainHeaderInfo {
-    text-align: center;
+    /* text-align: center; */
+    border: 1px red solid;
 }
 .mainHeaderNav {
     float: right;
+    border: 1px red solid;
+    margin: 1em;
 }
 
 .mainHeaderNav li {
+    /* float: left; */
     display: inline-block;
     margin-left: 10px;
     background: aqua;
     border-radius: 20px;
     padding: 5px 15px;
+    width: 150px;
+    text-align: center;
 }
 
 .mainHeaderIcon {
