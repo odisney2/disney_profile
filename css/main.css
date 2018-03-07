@@ -2,10 +2,12 @@
     box-sizing: border-box;
 }
 
+/* this set the block to be hyperlink instead of just the word themselves */
 li a{
     display: block;
 }
 
+/* this removes the underline from the hyperlinks */
 a {
     text-decoration: none;
 }
@@ -64,33 +66,37 @@ a {
 }
 
 .mainHeaderInfo {
-    /* text-align: center; */
+    text-align: center;
     border: 1px red solid;
 }
+
 .mainHeaderNav {
-    float: right;
-    border: 1px red solid;
-    margin: 1em;
+    /* float: right; */
+    /* border: 1px red solid;
+    margin: 1em; */
 }
 
 .mainHeaderNav li {
-    /* float: left; */
-    display: inline-block;
-    margin-left: 10px;
+    /* display: inline-block; */
+    /* margin-left: 10px; */
+     /* padding: 5px 15px; */
+    /* width: 150px; */   
+
     background: aqua;
     border-radius: 20px;
-    padding: 5px 15px;
-    width: 150px;
+    margin-top: 10px;
     text-align: center;
+    padding: 5px;
 }
 
 .mainHeaderIcon {
-    float: left;
+    /* float: left; */
 }
 
 .mainHeaderIcon p {
     font: bold;
     font-size: 4em;
+    text-align: center;
 }
 
 .mainContent h1 {
@@ -106,6 +112,7 @@ h2, p {
     /* padding: 0; */
     
 }
+
 
 .clearfix::after {
     content: " ";
@@ -130,10 +137,11 @@ h2, p {
     
     .mainContent {
         background-color: royalblue;
+        
     }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 930px) {
 
     .mainContent {
         background-color: green;
@@ -142,6 +150,23 @@ h2, p {
 
     .container_all {
         margin: 15px;
+    }
+
+    .mainHeaderIcon {
+        float: left;
+    }
+
+    .mainHeaderNav {
+        float: right;
+        border: 1px red solid;
+        margin: 1em;
+    }
+
+   .mainHeaderNav li {
+        display: inline-block;
+        margin-left: 10px;
+        padding: 5px 15px;
+        width: 150px;   
     }
 
     
