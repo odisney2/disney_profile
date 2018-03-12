@@ -1,8 +1,16 @@
+/* 
+    Orris Disney II
+    Spring 2018 Front End Web Development Class
+    Code Louisville Personal Project 
+    Disney Profolio
+*/
+
+
 * {
     box-sizing: border-box;
 }
 
-/* this set the block to be hyperlink instead of just the word themselves */
+/* this set the block to be hyperlinked instead of just the word themselves */
 li a{
     display: block;
 }
@@ -56,6 +64,8 @@ div p {
     background-color: yellow;
     margin: 0 auto;
     text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .container_one_title,
@@ -102,12 +112,6 @@ div p {
     border: 1px red solid;
 }
 
-.mainHeaderNav {
-    /* float: right; */
-    /* border: 1px red solid;
-    margin: 1em; */
-}
-
 .mainHeaderNav li {
     /* display: inline-block; */
     /* margin-left: 10px; */
@@ -121,16 +125,11 @@ div p {
     padding: 5px;
 }
 
-.mainHeaderIcon {
-    /* float: left; */
-}
-
 .mainHeaderIcon p {
     font: bold;
     font-size: 4em;
     text-align: center;
 }
-
 
 h1, 
 h2, p {
@@ -149,25 +148,20 @@ h2, p {
 /*******  Media Queries ********/
 
 @media (min-width: 600px) {
-    
-    .mainContent {
-        
-        /* width: 90%; */
-        border: 1px solid red;
-        /* width: 90%; */
-        
-        flex-direction: row;
-        /* display: flex; */
-        flex-wrap: wrap;
-        justify-content: space-around;
-        
+  
+    /*  Makes the Navigation button 50% smaller between screen size 600px and 930px and center on the page */
+    .mainHeaderNav li {
+        width: 50%;
     }
 
-    /* .mainContentTitle {
-        background-color: goldenrod;
-        margin: 0 auto;
-        width: 90%;
-    } */
+    ul {
+        text-align: center;
+    }
+
+    li {
+        display: inline-block;
+    }
+
 
     .mainContent,
     .mainContentTitle {
@@ -176,16 +170,16 @@ h2, p {
         width: 95%;
     }
 
-    /* .container_all {
-        float: left;
-        margin: 5px;
-        border: 1px solid yellow;
-    } */
+    .mainContent {
+        border: 1px solid red;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 
     .container_one,
     .container_three {
         width: 45%;
-
     }
 
     .container_two {
