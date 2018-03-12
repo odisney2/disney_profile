@@ -36,6 +36,15 @@ div p {
     color: white;
 }
 
+.mainHeaderIcon p{
+    /* background-image: url("../img/letter_d_grey.jpg");
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position: center; */
+    padding: 0;
+    margin-top: 20px;
+}
+
 .mainContent,
 .mainContentTitle {
     background-color: greenyellow;
@@ -111,11 +120,27 @@ div p {
      /* padding: 5px 15px; */
     /* width: 150px; */   
 
-    background: aqua;
+    background-color: aqua;
     border-radius: 20px;
     margin-top: 10px;
     text-align: center;
     padding: 5px;
+    
+}
+
+/* when someone hover, the hyperlink become focus over the main Header Navigation, this will change background color and the color of the font*/
+.mainHeaderNav li:hover {
+    background-color: blueviolet;
+    transition: background-color 1.0s;
+}
+
+li a:hover {
+    color:white;
+}
+
+li a:focus {
+    background-color: rgb(75, 44, 146);
+    color:white;
 }
 
 .mainHeaderIcon p {
@@ -203,6 +228,10 @@ h2, p {
 
     .mainHeaderIcon {
         float: left;
+    }
+
+    .mainHeaderIcon p {
+        margin-top: 10px;
     }
 
     .mainHeaderNav {
