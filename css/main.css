@@ -26,7 +26,8 @@ div p {
 }
 
 .mainBodyWrapper {
-
+    /* minimum height of viewport to help setup sticky footer on bottom*/
+    min-height: calc(100vh - 48px);   
     background: purple;
 }
 
@@ -51,14 +52,6 @@ div p {
     display: flex;
     flex-direction: column;
 }
-
-/* .mainContent {
-    /* margin: 0 auto;
-    padding-bottom: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-} */
 
 .mainFooter {
     background-color: yellow;
@@ -175,6 +168,7 @@ h2, p {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
+        margin-top: 10px;
     }
 
     .container_one,
