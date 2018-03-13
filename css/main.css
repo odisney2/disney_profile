@@ -2,12 +2,24 @@
     Orris Disney II
     Spring 2018 Front End Web Development Class
     Code Louisville Personal Project 
-    Disney Profolio
+    Disney Portfolio
 */
 
 
 * {
     box-sizing: border-box;
+}
+
+
+.mainBodyWrapper,
+.mainHeaderInfo,
+.mainHeaderContent,
+.mainHeader,
+.mainContentTitle,
+.mainContent,
+.mainFooter{
+    background-color: rgb(203, 210, 216);
+     
 }
 
 /* this set the block to be hyperlinked instead of just the word themselves */
@@ -28,11 +40,10 @@ div p {
 .mainBodyWrapper {
     /* minimum height of viewport to help setup sticky footer on bottom*/
     min-height: calc(100vh - 48px);   
-    background: purple;
 }
 
-.mainHeader {
-    background: blue;
+.mainHeader,
+.mainFooter {
     color: white;
 }
 
@@ -47,7 +58,6 @@ div p {
 
 .mainContent,
 .mainContentTitle {
-    background-color: greenyellow;
     width: 98%;
     margin: 0 auto;
     margin-top: 10px;
@@ -63,26 +73,15 @@ div p {
 }
 
 .mainFooter {
-    background-color: yellow;
     margin: 0 auto;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.container_one_title,
-.container_one_content {
-    background-color: blueviolet;
-}
-
-.container_two_title,
-.container_two_content {
-    background-color:#32e9e9;
-}
-
-.container_three_title,
-.container_three_content {
-    background-color:#e99a86;
+.container_all_title,
+.container_all_content {
+    background-color:rgb(175, 174, 175);
 }
 
 .container_all_title {
@@ -94,24 +93,26 @@ div p {
     margin: 10px; */
 }
 
-.container_all {
-    /* margin: 0 auto; */
-    /* margin-top: 15px;
-    padding: 0.50em; */
-    /* flex-grow: 1; */
-    margin: 10px;
+.container_all_content ul{
+    padding: 0px 20px;
+    list-style: disc;
+    /* list-style-type: circle;
+    list-style-position: inside; */
 }
 
+.container_all_content ul li {
+    display: list-item;
+    text-align: left;
+    padding-bottom: 5px;
 
-.mainHeaderContent {
-    background: chocolate;
-    border: 1px red solid;
+}
 
+.container_all {
+    margin: 10px;
 }
 
 .mainHeaderInfo {
     text-align: center;
-    border: 1px red solid;
 }
 
 .mainHeaderNav li {
@@ -120,7 +121,7 @@ div p {
      /* padding: 5px 15px; */
     /* width: 150px; */   
 
-    background-color: aqua;
+    background-color: #607993;
     border-radius: 20px;
     margin-top: 10px;
     text-align: center;
@@ -128,19 +129,20 @@ div p {
     
 }
 
+
+
 /* when someone hover, the hyperlink become focus over the main Header Navigation, this will change background color and the color of the font*/
 .mainHeaderNav li:hover {
     background-color: blueviolet;
     transition: background-color 1.0s;
 }
 
-li a:hover {
-    color:white;
+li a {
+    color: white;
 }
 
 li a:focus {
     background-color: rgb(75, 44, 146);
-    color:white;
 }
 
 .mainHeaderIcon p {
@@ -180,16 +182,23 @@ h2, p {
         display: inline-block;
     }
 
+    .mainBodyWrapper,
+    .mainHeaderInfo,
+    .mainHeaderContent,
+    .mainHeader,
+    .mainContentTitle,
+    .mainContent,
+    .mainFooter{
+        background-color:  rgb(177, 186, 196); 
+    }
 
     .mainContent,
     .mainContentTitle {
-        background-color: royalblue;
         margin: 0 auto;
         width: 95%;
     }
 
     .mainContent {
-        border: 1px solid red;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -207,13 +216,26 @@ h2, p {
     .container_all {
         margin: 5px;
     }
+
+
 }
 
 @media (min-width: 930px) {
 
+    .mainBodyWrapper,
+    .mainHeaderInfo,
+    .mainHeaderContent,
+    .mainHeader,
+    .mainContentTitle,
+    .mainContent,
+    .mainFooter{
+        background-color: #9099A2;
+         
+    }
+    
+
     .mainContent,
     .mainContentTitle {
-        background-color: green;
         width: 90%;
     }
 
@@ -236,7 +258,6 @@ h2, p {
 
     .mainHeaderNav {
         float: right;
-        border: 1px red solid;
         margin: 1em;
     }
 
