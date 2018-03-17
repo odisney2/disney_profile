@@ -71,15 +71,21 @@ var row3col3_status = "free";
 
 var playerTurn = "";
 
+var isPlayerWinner = false;
+
 row1col1.addEventListener('click', () => {
 
     if (row1col1_status === 'free') {
         row1col1_status = 'user';
         changeStatusCell(row1col1, playerTurn);
-        checkIfWinner('1', playerTurn);
-        playerTurn = 'computer';
-        playerTurnBox_update(playerTurn);
-        setTimeout(computerMove, 2000);
+        
+        isPlayerWinner = checkIfWinner('1', playerTurn);
+        
+        if (isPlayerWinner === false) {
+            playerTurn = 'computer';
+            playerTurnBox_update(playerTurn);
+            setTimeout(computerMove, 2000);
+        }
     }
     else {
         // leaving this here for possible troubleshooting purpose ;
@@ -93,12 +99,14 @@ row1col2.addEventListener('click', () => {
     if (row1col2_status === 'free') {
         row1col2_status = 'user';
         changeStatusCell(row1col2, playerTurn);
-        checkIfWinner('2', playerTurn);
-        playerTurn = 'computer';
-        playerTurnBox_update(playerTurn);
-        setTimeout(computerMove, 2000);
-        // computerMove ();
-        // sleep(2000);
+        isPlayerWinner = checkIfWinner('2', playerTurn);
+
+        if (isPlayerWinner === false) {
+            playerTurn = 'computer';
+            playerTurnBox_update(playerTurn);
+            setTimeout(computerMove, 2000);
+        }
+        
     }
     else {
         // leaving this here for possible troubleshooting purpose ;
@@ -112,10 +120,13 @@ row1col3.addEventListener('click', () => {
     if (row1col3_status === 'free') {
         row1col3_status = 'user';
         changeStatusCell(row1col3, playerTurn);
-        checkIfWinner('3', playerTurn);
-        playerTurn = 'computer';
-        playerTurnBox_update(playerTurn);
-        setTimeout(computerMove, 2000);
+        isPlayerWinner = checkIfWinner('3', playerTurn);
+
+        if (isPlayerWinner === false) {
+            playerTurn = 'computer';
+            playerTurnBox_update(playerTurn);
+            setTimeout(computerMove, 2000);
+        }
     }
     else {
         // leaving this here for possible troubleshooting purpose ;
@@ -128,10 +139,13 @@ row2col1.addEventListener('click', () => {
     if (row2col1_status === 'free') {
         row2col1_status = 'user';
         changeStatusCell(row2col1, playerTurn);
-        checkIfWinner('4', playerTurn);
-         playerTurn = 'computer';
-        playerTurnBox_update(playerTurn);
-        setTimeout(computerMove, 2000);
+        isPlayerWinner = checkIfWinner('4', playerTurn);
+        
+        if (isPlayerWinner === false) {        
+            playerTurn = 'computer';
+            playerTurnBox_update(playerTurn);
+            setTimeout(computerMove, 2000);
+        }
     }
     else {
         // leaving this here for possible troubleshooting purpose ;
@@ -145,10 +159,12 @@ row2col2.addEventListener('click', () => {
     if (row2col2_status === 'free') {
         row2col2_status = 'user';
         changeStatusCell(row2col2, playerTurn);
-        checkIfWinner('5', playerTurn);
-        playerTurn = 'computer';
-        playerTurnBox_update(playerTurn);
-        setTimeout(computerMove, 2000);
+        isPlayerWinner = checkIfWinner('5', playerTurn);
+        if (isPlayerWinner === false) {
+            playerTurn = 'computer';
+            playerTurnBox_update(playerTurn);
+            setTimeout(computerMove, 2000);
+        }
     }
     else {
         // leaving this here for possible troubleshooting purpose ;
@@ -163,10 +179,12 @@ row2col3.addEventListener('click', () => {
     if (row2col3_status === 'free') {
         row2col3_status = 'user';
         changeStatusCell(row2col3, playerTurn);
-        checkIfWinner('6', playerTurn);
-        playerTurn = 'computer';
-        playerTurnBox_update(playerTurn);
-        setTimeout(computerMove, 2000);
+        isPlayerWinner = checkIfWinner('6', playerTurn);
+        if (isPlayerWinner === false) {
+            playerTurn = 'computer';
+            playerTurnBox_update(playerTurn);
+            setTimeout(computerMove, 2000);
+        }
     }
     else {
         // leaving this here for possible troubleshooting purpose ;
@@ -180,10 +198,12 @@ row3col1.addEventListener('click', () => {
     if (row3col1_status === 'free') {
         row3col1_status = 'user';
         changeStatusCell(row3col1, playerTurn);
-        checkIfWinner('7', playerTurn);
-        playerTurn = 'computer';
-        playerTurnBox_update(playerTurn);
-        setTimeout(computerMove, 2000);
+        isPlayerWinner = checkIfWinner('7', playerTurn);
+        if (isPlayerWinner === false) {
+            playerTurn = 'computer';
+            playerTurnBox_update(playerTurn);
+            setTimeout(computerMove, 2000);
+        }
     }
     else {
         // leaving this here for possible troubleshooting purpose ;
@@ -197,10 +217,12 @@ row3col2.addEventListener('click', () => {
     if (row3col2_status === 'free') {
         row3col2_status = 'user';
         changeStatusCell(row3col2, playerTurn);
-        checkIfWinner('8', playerTurn);
-        playerTurn = 'computer';
-        playerTurnBox_update(playerTurn);
-        setTimeout(computerMove, 2000);
+        isPlayerWinner = checkIfWinner('8', playerTurn);
+        if (isPlayerWinner === false) {
+            playerTurn = 'computer';
+            playerTurnBox_update(playerTurn);
+            setTimeout(computerMove, 2000);
+        }
     }
     else {
         // leaving this here for possible troubleshooting purpose ;
@@ -216,10 +238,12 @@ row3col3.addEventListener('click', () => {
     if (row3col3_status === 'free') {
         row3col3_status = 'user';
         changeStatusCell(row3col3, playerTurn);
-        checkIfWinner('9', playerTurn);
-        playerTurn = 'computer';
-        playerTurnBox_update(playerTurn);
-        setTimeout(computerMove, 2000);
+        isPlayerWinner = checkIfWinner('9', playerTurn);
+        if (isPlayerWinner === false) {
+            playerTurn = 'computer';
+            playerTurnBox_update(playerTurn);
+            setTimeout(computerMove, 2000);
+        }
     }
     else {
         // leaving this here for possible troubleshooting purpose ;
@@ -266,6 +290,15 @@ function resetTheBoard() {
     playerTurn = randomPlayerTurn();
     playerTurnBox_update(playerTurn);
 
+    if (playerTurn === 'computer') {
+    
+        playerTurnBox.innerHTML = "computer";
+        playerTurnBox.style.backgroundColor = "red"; 
+       
+    
+        setTimeout(computerMove, 2000);
+       }
+
 }
 
 
@@ -308,55 +341,55 @@ function computerMove () {
         if ((possiblePosition === 1) && (row1col1_status === 'free')){
             row1col1_status = 'computer';
             changeStatusCell(row1col1, playerTurn);
-            checkIfWinner('1', playerTurn);
+            isPlayerWinner = checkIfWinner('1', playerTurn);
             found = true;
         } 
         else if ((possiblePosition === 2) && (row1col2_status === 'free')){
             row1col2_status = 'computer';
             changeStatusCell(row1col2, playerTurn);
-            checkIfWinner('2', playerTurn);
+            isPlayerWinner = checkIfWinner('2', playerTurn);
             found = true;
         }   
         else if ((possiblePosition === 3) && (row1col3_status === 'free')){
             row1col3_status = 'computer';
             changeStatusCell(row1col3, playerTurn);
-            checkIfWinner('3', playerTurn);
+            isPlayerWinner = checkIfWinner('3', playerTurn);
             found = true;
         }   
         else if ((possiblePosition === 4) && (row2col1_status === 'free')){
             row2col1_status = 'computer';
             changeStatusCell(row2col1, playerTurn);
-            checkIfWinner('4', playerTurn);
+            isPlayerWinner = checkIfWinner('4', playerTurn);
             found = true;
         } 
         else if ((possiblePosition === 5) && (row2col2_status === 'free')){
             row2col2_status = 'computer';
             changeStatusCell(row2col2, playerTurn);
-            checkIfWinner('5', playerTurn);
+            isPlayerWinner = checkIfWinner('5', playerTurn);
             found = true;
         }   
         else if ((possiblePosition === 6) && (row2col3_status === 'free')){
             row2col3_status = 'computer';
             changeStatusCell(row2col3, playerTurn);
-            checkIfWinner('6', playerTurn);
+            isPlayerWinner = checkIfWinner('6', playerTurn);
             found = true;
         } 
         else if ((possiblePosition === 7) && (row3col1_status === 'free')){
             row3col1_status = 'computer';
             changeStatusCell(row3col1, playerTurn);
-            checkIfWinner('7', playerTurn);
+            isPlayerWinner = checkIfWinner('7', playerTurn);
             found = true;
         } 
         else if ((possiblePosition === 8) && (row3col2_status === 'free')){
             row3col2_status = 'computer';
             changeStatusCell(row3col2, playerTurn);
-            checkIfWinner('8', playerTurn);
+            isPlayerWinner = checkIfWinner('8', playerTurn);
             found = true;
         }   
         else if ((possiblePosition === 9) && (row3col3_status === 'free')){
             row3col3_status = 'computer';
             changeStatusCell(row3col3, playerTurn);
-            checkIfWinner('9', playerTurn);
+            isPlayerWinner = checkIfWinner('9', playerTurn);
             found = true;
         }     
 
@@ -577,7 +610,7 @@ function checkIfWinner(position, player) {
             
         }
 
-        else if ((row2col2_status === player) &&
+        else if ((row2col1_status === player) &&
                  (row2col2_status === player) && 
                  (row2col3_status === player)) {
 
@@ -613,7 +646,7 @@ function checkIfWinner(position, player) {
 
                     changeStatusCell(row2col1, "winner");
                     changeStatusCell(row2col2, "winner");
-                    changeStatusCell(row3col3, "winner");
+                    changeStatusCell(row2col3, "winner");
 
                     isPlayerWinner = true;
                     
@@ -744,11 +777,19 @@ function checkIfWinner(position, player) {
     if (isPlayerWinner === true) {
         if (player === 'user') {
             winner.value = "User is the Winner!!!";
+            winner.style.backgroundColor = "blue";
+            winner.color = "white";
             console.log('Winner');
+            
         }
         else if (player === 'computer') {
             winner.value = "Computer is the Winner!!";
         }
+
+        return true;
+    }
+    else {
+        return false;
     }
 }
 
