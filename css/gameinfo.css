@@ -1,0 +1,93 @@
+
+* {
+    box-sizing: border-box;
+}
+
+.row1 {
+    text-align: center;
+
+}
+
+.row1, 
+.row2 {
+
+    text-align: center;
+    margin-bottom : 2px;
+}
+
+.row3 {
+    text-align: center;
+}
+
+.r1c1,
+.r1c2,
+.r1c3,
+.r2c1,
+.r2c2,
+.r2c3,
+.r3c1,
+.r3c2,
+.r3c3 {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin: auto;
+    border: 0.5px solid black;
+    background-color: white;
+    font-size: 2em;
+}
+
+p {
+    size: 4em;
+}
+
+/* .r1c1 {
+    background-color: pink;
+}
+
+.r1c2 {
+    background-color: purple;
+}
+
+.r1c3 {
+    background-color: navy;
+}
+
+.r2c1 {
+    background-color: navy;
+}
+
+.r2c2 {
+    background-color: pink;
+}
+
+.r2c3 {
+    background-color: purple;
+}
+
+.r3c1 {
+    background-color: purple;
+}
+
+.r3c2 {
+    background-color:navy;
+}
+
+.r3c3 {
+    background-color: pink;
+} */
+
+
+.mainTable {
+    /* border: 1px solid orange; */
+    width: 320px;
+
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0;
+    /* border: 1px solid greenyellow; */
+}
