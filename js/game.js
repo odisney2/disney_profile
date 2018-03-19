@@ -1,5 +1,21 @@
+/* 
+    Orris Disney II
+    Spring 2018 Front End Web Development Class
+    Code Louisville Personal Project 
+    Disney Portfolio
+    JavaScipt for the Tic Tac Toe Game
+*/
 
-// this function changes the cell status when the computer or user select certain cells
+
+
+/****************************************** FUNCTION SECTION ******************************************** */
+
+
+/*
+ This function does the following  
+    The color background of cell depending on who clicked that cell, and during the program, if a line has been detected, it will have
+        winner identified on it.    The last else is for troubleshooting purpose (this should never happen, but never say never) 
+*/
 
 function changeStatusCell (position, player) {
     
@@ -8,15 +24,17 @@ function changeStatusCell (position, player) {
     if (player ==='user') {
         position.innerHTML = "<p>X</p>";
         position.style.backgroundColor = "green";
-
     }
+
     else if (player ==='computer') {
         position.innerHTML = "<p>O</p>";
         position.style.backgroundColor = "red";
     }
+
     else if (player === 'winner') {
         position.style.backgroundColor = "orange";
     }
+
     else {
         position.innerHTML = "<p>-</p>";
         position.style.backgroundColor = "purple";
@@ -25,6 +43,16 @@ function changeStatusCell (position, player) {
 
 }
 
+
+
+/*
+ This function does the following  
+    There is a player status box on bottom of game, to indicate who's turn it is,   It will change the background based 
+    on who is playing currently.      The last else statement is for troubleshooting purpose 
+    (this should never happen, but never say never)
+ */
+
+ 
 function playerTurnBox_update(player) {
 
     playerTurnBox.value = player;
@@ -40,223 +68,6 @@ function playerTurnBox_update(player) {
     }
 }   
 
-
-
-
-const resetButton = document.getElementById('reset_board');
-
-const row1col1 = document.getElementsByClassName('r1c1')[0];
-const row1col2 = document.getElementsByClassName('r1c2')[0];
-const row1col3 = document.getElementsByClassName('r1c3')[0];
-
-const row2col1 = document.getElementsByClassName('r2c1')[0];
-const row2col2 = document.getElementsByClassName('r2c2')[0];
-const row2col3 = document.getElementsByClassName('r2c3')[0];
-
-const row3col1 = document.getElementsByClassName('r3c1')[0];
-const row3col2 = document.getElementsByClassName('r3c2')[0];
-const row3col3 = document.getElementsByClassName('r3c3')[0];
-
-var row1col1_status = "free";
-var row1col2_status = "free";
-var row1col3_status = "free";
-
-var row2col1_status = "free";
-var row2col2_status = "free";
-var row2col3_status = "free";
-
-var row3col1_status = "free";
-var row3col2_status = "free";
-var row3col3_status = "free";
-
-var playerTurn = "";
-
-var isPlayerWinner = false;
-
-row1col1.addEventListener('click', () => {
-
-    if (row1col1_status === 'free') {
-        row1col1_status = 'user';
-        changeStatusCell(row1col1, playerTurn);
-        
-        isPlayerWinner = checkIfWinner('1', playerTurn);
-        
-        if (isPlayerWinner === false) {
-            playerTurn = 'computer';
-            playerTurnBox_update(playerTurn);
-            setTimeout(computerMove, 2000);
-        }
-    }
-    else {
-        // leaving this here for possible troubleshooting purpose ;
-        // DO NOTHING
-    }  
-  
-})
-
-row1col2.addEventListener('click', () => {
-
-    if (row1col2_status === 'free') {
-        row1col2_status = 'user';
-        changeStatusCell(row1col2, playerTurn);
-        isPlayerWinner = checkIfWinner('2', playerTurn);
-
-        if (isPlayerWinner === false) {
-            playerTurn = 'computer';
-            playerTurnBox_update(playerTurn);
-            setTimeout(computerMove, 2000);
-        }
-        
-    }
-    else {
-        // leaving this here for possible troubleshooting purpose ;
-        // DO NOTHING
-    }    
-})
-
-
-row1col3.addEventListener('click', () => {
-
-    if (row1col3_status === 'free') {
-        row1col3_status = 'user';
-        changeStatusCell(row1col3, playerTurn);
-        isPlayerWinner = checkIfWinner('3', playerTurn);
-
-        if (isPlayerWinner === false) {
-            playerTurn = 'computer';
-            playerTurnBox_update(playerTurn);
-            setTimeout(computerMove, 2000);
-        }
-    }
-    else {
-        // leaving this here for possible troubleshooting purpose ;
-        // DO NOTHING
-    }  
-})
-
-row2col1.addEventListener('click', () => {
-
-    if (row2col1_status === 'free') {
-        row2col1_status = 'user';
-        changeStatusCell(row2col1, playerTurn);
-        isPlayerWinner = checkIfWinner('4', playerTurn);
-        
-        if (isPlayerWinner === false) {        
-            playerTurn = 'computer';
-            playerTurnBox_update(playerTurn);
-            setTimeout(computerMove, 2000);
-        }
-    }
-    else {
-        // leaving this here for possible troubleshooting purpose ;
-        // DO NOTHING
-    }
-  
-})
-
-row2col2.addEventListener('click', () => {
-
-    if (row2col2_status === 'free') {
-        row2col2_status = 'user';
-        changeStatusCell(row2col2, playerTurn);
-        isPlayerWinner = checkIfWinner('5', playerTurn);
-        if (isPlayerWinner === false) {
-            playerTurn = 'computer';
-            playerTurnBox_update(playerTurn);
-            setTimeout(computerMove, 2000);
-        }
-    }
-    else {
-        // leaving this here for possible troubleshooting purpose ;
-        // DO NOTHING
-    }
-  
-})
-
-
-row2col3.addEventListener('click', () => {
-
-    if (row2col3_status === 'free') {
-        row2col3_status = 'user';
-        changeStatusCell(row2col3, playerTurn);
-        isPlayerWinner = checkIfWinner('6', playerTurn);
-        if (isPlayerWinner === false) {
-            playerTurn = 'computer';
-            playerTurnBox_update(playerTurn);
-            setTimeout(computerMove, 2000);
-        }
-    }
-    else {
-        // leaving this here for possible troubleshooting purpose ;
-        // DO NOTHING
-    }
-    
-})
-
-row3col1.addEventListener('click', () => {
-
-    if (row3col1_status === 'free') {
-        row3col1_status = 'user';
-        changeStatusCell(row3col1, playerTurn);
-        isPlayerWinner = checkIfWinner('7', playerTurn);
-        if (isPlayerWinner === false) {
-            playerTurn = 'computer';
-            playerTurnBox_update(playerTurn);
-            setTimeout(computerMove, 2000);
-        }
-    }
-    else {
-        // leaving this here for possible troubleshooting purpose ;
-        // DO NOTHING
-    }
-  
-})
-
-row3col2.addEventListener('click', () => {
-
-    if (row3col2_status === 'free') {
-        row3col2_status = 'user';
-        changeStatusCell(row3col2, playerTurn);
-        isPlayerWinner = checkIfWinner('8', playerTurn);
-        if (isPlayerWinner === false) {
-            playerTurn = 'computer';
-            playerTurnBox_update(playerTurn);
-            setTimeout(computerMove, 2000);
-        }
-    }
-    else {
-        // leaving this here for possible troubleshooting purpose ;
-        // DO NOTHING
-    }
-  
-})
-
-
-
-row3col3.addEventListener('click', () => {
-
-    if (row3col3_status === 'free') {
-        row3col3_status = 'user';
-        changeStatusCell(row3col3, playerTurn);
-        isPlayerWinner = checkIfWinner('9', playerTurn);
-        if (isPlayerWinner === false) {
-            playerTurn = 'computer';
-            playerTurnBox_update(playerTurn);
-            setTimeout(computerMove, 2000);
-        }
-    }
-    else {
-        // leaving this here for possible troubleshooting purpose ;
-        // DO NOTHING
-    }
-  
-  
-})
-
-resetButton.addEventListener('click', () => {
-
-    resetTheBoard();
-})
 
 function resetTheBoard() {
 
@@ -793,7 +604,250 @@ function checkIfWinner(position, player) {
     }
 }
 
-// ******************   Begin of main Program ************************
+/****************************************** END FUNCTION SECTION ******************************************** */
+
+
+
+/****************************************** BEGIN ADD Event Listener SECTION ******************************************** */
+
+const resetButton = document.getElementById('reset_board');
+
+const row1col1 = document.getElementsByClassName('r1c1')[0];
+const row1col2 = document.getElementsByClassName('r1c2')[0];
+const row1col3 = document.getElementsByClassName('r1c3')[0];
+
+const row2col1 = document.getElementsByClassName('r2c1')[0];
+const row2col2 = document.getElementsByClassName('r2c2')[0];
+const row2col3 = document.getElementsByClassName('r2c3')[0];
+
+const row3col1 = document.getElementsByClassName('r3c1')[0];
+const row3col2 = document.getElementsByClassName('r3c2')[0];
+const row3col3 = document.getElementsByClassName('r3c3')[0];
+
+var row1col1_status = "free";
+var row1col2_status = "free";
+var row1col3_status = "free";
+
+var row2col1_status = "free";
+var row2col2_status = "free";
+var row2col3_status = "free";
+
+var row3col1_status = "free";
+var row3col2_status = "free";
+var row3col3_status = "free";
+
+var playerTurn = "";
+
+var isPlayerWinner = false;
+
+/* 
+    There is a group of 9 "addEventListener" for "click" of the div area. This is from the user's clicking the button.  
+    One for each possible 9 cell in tic tac toe that a user can click on.   It will do the following when
+    it is clicked
+    a.  first, it will check if cell is available (if not, do nothing)
+    b.  if it is available, mark it being used by that specific player in this case, the user
+    c.  then it will check to see if the user is a winner,  it will check all angle of the tic tac toe to see if there is a match of three
+        if there is, then it will declare it winner
+    d.  If it is not a winner, it will  change the user status to "computer", update the Box indicate it is computer's turn, and wait
+        2 seconds before running the function to let the computer pick next available box.
+*/
+
+row1col1.addEventListener('click', () => {
+
+    if (row1col1_status === 'free') {
+        row1col1_status = 'user';
+        changeStatusCell(row1col1, playerTurn);
+        
+        isPlayerWinner = checkIfWinner('1', playerTurn);
+        
+        if (isPlayerWinner === false) {
+            playerTurn = 'computer';
+            playerTurnBox_update(playerTurn);
+            setTimeout(computerMove, 2000);
+        }
+    }
+    else {
+        // leaving this here for possible troubleshooting purpose ;
+        // DO NOTHING
+    }  
+  
+})
+
+row1col2.addEventListener('click', () => {
+
+    if (row1col2_status === 'free') {
+        row1col2_status = 'user';
+        changeStatusCell(row1col2, playerTurn);
+        isPlayerWinner = checkIfWinner('2', playerTurn);
+
+        if (isPlayerWinner === false) {
+            playerTurn = 'computer';
+            playerTurnBox_update(playerTurn);
+            setTimeout(computerMove, 2000);
+        }
+        
+    }
+    else {
+        // leaving this here for possible troubleshooting purpose ;
+        // DO NOTHING
+    }    
+})
+
+
+row1col3.addEventListener('click', () => {
+
+    if (row1col3_status === 'free') {
+        row1col3_status = 'user';
+        changeStatusCell(row1col3, playerTurn);
+        isPlayerWinner = checkIfWinner('3', playerTurn);
+
+        if (isPlayerWinner === false) {
+            playerTurn = 'computer';
+            playerTurnBox_update(playerTurn);
+            setTimeout(computerMove, 2000);
+        }
+    }
+    else {
+        // leaving this here for possible troubleshooting purpose ;
+        // DO NOTHING
+    }  
+})
+
+row2col1.addEventListener('click', () => {
+
+    if (row2col1_status === 'free') {
+        row2col1_status = 'user';
+        changeStatusCell(row2col1, playerTurn);
+        isPlayerWinner = checkIfWinner('4', playerTurn);
+        
+        if (isPlayerWinner === false) {        
+            playerTurn = 'computer';
+            playerTurnBox_update(playerTurn);
+            setTimeout(computerMove, 2000);
+        }
+    }
+    else {
+        // leaving this here for possible troubleshooting purpose ;
+        // DO NOTHING
+    }
+  
+})
+
+row2col2.addEventListener('click', () => {
+
+    if (row2col2_status === 'free') {
+        row2col2_status = 'user';
+        changeStatusCell(row2col2, playerTurn);
+        isPlayerWinner = checkIfWinner('5', playerTurn);
+        if (isPlayerWinner === false) {
+            playerTurn = 'computer';
+            playerTurnBox_update(playerTurn);
+            setTimeout(computerMove, 2000);
+        }
+    }
+    else {
+        // leaving this here for possible troubleshooting purpose ;
+        // DO NOTHING
+    }
+  
+})
+
+
+row2col3.addEventListener('click', () => {
+
+    if (row2col3_status === 'free') {
+        row2col3_status = 'user';
+        changeStatusCell(row2col3, playerTurn);
+        isPlayerWinner = checkIfWinner('6', playerTurn);
+        if (isPlayerWinner === false) {
+            playerTurn = 'computer';
+            playerTurnBox_update(playerTurn);
+            setTimeout(computerMove, 2000);
+        }
+    }
+    else {
+        // leaving this here for possible troubleshooting purpose ;
+        // DO NOTHING
+    }
+    
+})
+
+row3col1.addEventListener('click', () => {
+
+    if (row3col1_status === 'free') {
+        row3col1_status = 'user';
+        changeStatusCell(row3col1, playerTurn);
+        isPlayerWinner = checkIfWinner('7', playerTurn);
+        if (isPlayerWinner === false) {
+            playerTurn = 'computer';
+            playerTurnBox_update(playerTurn);
+            setTimeout(computerMove, 2000);
+        }
+    }
+    else {
+        // leaving this here for possible troubleshooting purpose ;
+        // DO NOTHING
+    }
+  
+})
+
+row3col2.addEventListener('click', () => {
+
+    if (row3col2_status === 'free') {
+        row3col2_status = 'user';
+        changeStatusCell(row3col2, playerTurn);
+        isPlayerWinner = checkIfWinner('8', playerTurn);
+        if (isPlayerWinner === false) {
+            playerTurn = 'computer';
+            playerTurnBox_update(playerTurn);
+            setTimeout(computerMove, 2000);
+        }
+    }
+    else {
+        // leaving this here for possible troubleshooting purpose ;
+        // DO NOTHING
+    }
+  
+})
+
+
+
+row3col3.addEventListener('click', () => {
+
+    if (row3col3_status === 'free') {
+        row3col3_status = 'user';
+        changeStatusCell(row3col3, playerTurn);
+        isPlayerWinner = checkIfWinner('9', playerTurn);
+        if (isPlayerWinner === false) {
+            playerTurn = 'computer';
+            playerTurnBox_update(playerTurn);
+            setTimeout(computerMove, 2000);
+        }
+    }
+    else {
+        // leaving this here for possible troubleshooting purpose ;
+        // DO NOTHING
+    }
+  
+  
+})
+
+/*
+    when user wants to reset the board back to beginning to start a new game
+*/
+resetButton.addEventListener('click', () => {
+
+    resetTheBoard();
+})
+
+/****************************************** END ADD Event Listener SECTION ******************************************** */
+
+
+
+
+
+/****************************************** Begin of main Program ******************************************** */
+
 
 if (playerTurn === '')
 {
@@ -824,4 +878,5 @@ else {
     playerTurnBox.style.backgroundColor = "purple";  
 }
 
-// ******************   End of main Program **************************
+/****************************************** End of main Program ******************************************** */
+

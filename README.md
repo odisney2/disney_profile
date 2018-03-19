@@ -12,16 +12,22 @@ A brief description of your project
 I decided to create my personal Profolio as the project.   Here are a few notes about this project
 
 1.  Tried to group a lot of the layout design together to be able to customizer the layout a little better.  For example,   in the header,   
-    a.  there is a mainHeader div - inside the mainHeader div there are
+    a.  There is a mainHeader div - inside the mainHeader div there are
         i.    mainHeaderInfo  (which is the title of the web page)
         ii.   mainHeaderContent -  containing the following info
             A.  mainHeaderIcon 
-            B.  mainHeaderNav
+            B.  mainHeaderContent
 
-2.  There will be some light background color so that you can see where the grouping happens. For example the following area will have their own background color and possibily their own font style.    It will also be different based on the display view screen
-    a.  Background
+    b.  There is a mainContent div - Where all the containers will be located. and where all the content about the web page will be.
+        i.   container_one,  container_two, and container_three.   Will show the web page is responsive based on size.
+
+
+2.  There will be some light background color so that you can see where the grouping happens. For example the following area will have their own background color.    It will also be different based on the display view screen
+    a.  Background color
     b.  Container 
+    c.  The navigation button at top of page
 
+3.  There is a game using javascript.    This is a very simple Tic Tac Toe game.   The computer would radomonly pick a number between 1 and 9, and if it is available put the "O" in it.   If it is not available, it will search for another number and see if it is available.   Then the user can select an empty box.    If there is something already there, it will not let you click it.
 
 
 
@@ -58,7 +64,7 @@ example. class name ex( .main-info-section )
     this container has the all three of the sub containers that will be modified in size and how many will show across the screen depending on the width of the viewport.   I am currently using the Flexbox for this layout.
 
 9.  .container_all 
-    this is a "master" container which contain all three of the containers and to help keep the container centered on the web page.
+    this is a "master" container which is for all up to three of the containers and to help keep the container centered on the web page.  this is where i would put what i want all three containers to look like (font, color, size, etc)
 
 10. .container_one, 
     .container_two,
@@ -69,7 +75,7 @@ example. class name ex( .main-info-section )
         c.  if viewport over 930px, then it will show all three containers horizontally
 
 11. .container_all_title
-    this is for all of the sub container titles, which is currently set for italic, a little bigger, and centered at that specific container
+    For all of the sub container titles, which is currently set for italic, a little bigger, and centered at that specific container
 
 12. .container_one_title,
     .container_two_title,
@@ -77,15 +83,15 @@ example. class name ex( .main-info-section )
     Currently only the background of the container is different between the three
 
 13. .container_all_content
-    this is for all of the sub container content area.   Currently there is nothing happening with this, but this is here for future reference when i want to change the font, color, etc for all three in one place
+    For all of the sub container content area.   Currently there is nothing happening with this, but this is here for future reference when i want to change the font, color, etc for all three in one place
 
 14. .container_one_content,
     .container_two_content,
     .container_three_content
     this is similiar to container_???_title,   currently only have different background color
 
-15.  mainFooter
-    this is for the footer of the page,   currently has different background color and the item is centered on the page.   It also has padding to make it a little bigger
+15. .mainFooter
+    For the footer of the page,   this is for possible customizing background color and the item is centered on the page.   It also has padding to make it a little bigger
 
 
 ```
@@ -94,9 +100,31 @@ example. class name ex( .main-info-section )
 
 ## Custom JavaScript Functions
 ```
-The javascript functions I created are:
+The javascript functions created are:
 
-1. function name ex( animate() )
+example. function name ex( animate() )
 .. what function does ex( animate() is used to move the elements in the info div across the screen)
+
+1.  changeStatusCell 
+    The color background of cell depending on who clicked that cell, and during the program, if a line has been detected, it will have
+        winner identified on it.    The last else statement is for troubleshooting purpose (this should never happen, but never say never) 
+
+2.  playerTurnBox_update 
+    There is a player status box on bottom of game, to indicate who's turn it is,   It will change the background based on who is playing currently.      The last else statement is for troubleshooting purpose (this should never happen, but never say never)
+
+3.  
+
+new Number - will fill later.  There is a group of 9 "addEventListener" for "click" of the div area. and one reset board.  This is from the user's clicking the div area  
+     or the button to reset .One for each possible 9 cell in tic tac toe that a user can click on.   It will do the following when
+    it is clicked
+    a.  first, it will check if cell is available (if not, do nothing)
+    b.  if it is available, mark it being used by that specific player in this case, the user
+    c.  then it will check to see if the user is a winner,  it will check all angle of the tic tac toe to see if there is a match of three
+        if there is, then it will declare it winner
+    d.  If it is not a winner, it will  change the user status to "computer", update the Box indicate it is computer's turn, and wait
+        2 seconds before running the function to let the computer pick next available box.
+    e.  There is a resetBoard listing for "click"  - when user wants to reset the board back to beginning to start a new game
+
+4.  
 
 ```
