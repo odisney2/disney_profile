@@ -39,10 +39,6 @@
 
 }
 
-.container_single_content {
-    /* border: 1px red solid; */
-
-}
 .row {
     /* border: 1px blue solid; */
     text-align: left;
@@ -96,7 +92,8 @@ div p {
 }
 
 .mainContent,
-.mainContentTitle {
+.mainContentTitle,
+.container_single {
     width: 98%;
     margin: 0 auto;
     margin-top: 10px;
@@ -211,6 +208,60 @@ h2, p {
     /* padding: 0; */
     
 }
+
+/*  
+This section is for the tab setup for the Resume page.   i used the w3schools.com as the reference on how to setup the tabs
+*/
+
+/* Style the tab */
+.tabResume {
+    /* 
+    The overflow property specifies what should happen if content overflows an element's box. 
+    This property specifies whether to clip content or to add scrollbars when an element's content
+     is too big to fit in a specified area.
+    */
+
+    overflow: hidden; 
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tabResume button {
+    background-color: inherit;
+    border-top-left-radius : 20px;
+    border-top-right-radius: 20px;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tabResume button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tabResume button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabResumeContent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+
+
+/* END of the tab in Resume setup */
+
+
 
 
 .clearfix::after {

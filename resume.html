@@ -43,7 +43,7 @@
             </header>
 
             <hr>
-            
+
             <div class="mainContentTitle">
                 <h1>Resume</h1>
             </div>
@@ -52,22 +52,54 @@
                 
 <!--  *******************************    Container one ***********************************************-->
             
-                <div class="container_one  container_all">
-                    <div class="container_one_title container_all_title">
+                <div class="container_single">
+                    <div class="container_single_title container_all_title">
                         Resume - development
                     </div>
-                    <div class="container_one_content container_all_content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-                        aliqua. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam. A pellentesque sit amet 
-                        porttitor eget dolor morbi. Tempus egestas sed sed risus pretium. Aliquam ultrices sagittis orci a scelerisque purus 
-                        semper eget. Arcu non sodales neque sodales ut etiam. Felis bibendum ut tristique et. Morbi leo urna molestie at. 
-                        Augue lacus viverra vitae congue eu. Dapibus ultrices in iaculis nunc sed augue. Eros in cursus turpis massa. 
-                        Scelerisque felis imperdiet proin fermentum leo vel orci porta non.</p>
-                    </div>
-                </div>
+                    <div class="container_single_content container_all_content">
+                    
+                        <!-- 
+                            Used w3Schools.com as the reference to create tabs for my resume.
+                        -->
 
+                        <!-- Tab links -->
+                        <div class="tabResume">
+                            <button class="tabResumeLinks" onclick="openResumeSection(event, 'experience')">Experience</button>
+                            <button class="tabResumeLinks" onclick="openResumeSection(event, 'skills')">Technical Skills</button>
+                            <button class="tabResumeLinks" onclick="openResumeSection(event, 'education')">Education</button>
+                            <button class="tabResumeLinks" onclick="openResumeSection(event, 'narative')">Work Narative</button>
+                        </div>
+                        
+                        <!-- Tab content -->
+                        <div id="experience" class="tabResumeContent">
+                            <h3>Experience</h3>
+                            <p>
+                                Put my work Experience here
+                            </p>
+                        </div>
+                        
+                        <div id="skills" class="tabResumeContent">
+                            <h3>Technical Skills</h3>
+                            <p>
+                                Put my Technical Skills here
+                            </p> 
+                        </div>
+                        
+                        <div id="education" class="tabResumeContent">
+                            <h3>Education</h3>
+                            <p>
+                                Put my Education info here
+                            </p>
+                        </div>
+                        <div id="narative" class="tabResumeContent">
+                            <h3>Work Narative</h3>
+                            <p>
+                                Put my work naratives info here
+                            </p>
+                        </div>
 
-    
+                    </div>   <!-- end container-single-content -->
+                </div>  <!-- end container one main -->
 
             </div>  <!-- end div mainContent -->
 
@@ -81,6 +113,7 @@
                 </footer>
         </div>
 
+        <script src="js/app.js"></script>
     </body>
 
 
