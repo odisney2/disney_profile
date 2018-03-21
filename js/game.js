@@ -52,7 +52,6 @@ function changeStatusCell (position, player) {
     (this should never happen, but never say never)
  */
 
- 
 function playerTurnBox_update(player) {
 
     playerTurnBox.value = player;
@@ -68,6 +67,12 @@ function playerTurnBox_update(player) {
     }
 }   
 
+/*
+    This function does the following
+        reset the board at the beginning staring a new game.   It reset all cells to 'free'
+        then it randomly pick to gets to start the game
+        then it updates the playerbox to indicate who's turn it is
+*/
 
 function resetTheBoard() {
 
@@ -112,11 +117,20 @@ function resetTheBoard() {
 
 }
 
+/*
+    This function does the following
+    reset the rowColPosition block to be white with no letters
+*/
 
 function resetInnerBoard(rowColPosition) {
     rowColPosition.style.backgroundColor = "white";
     rowColPosition.innerHTML = "<p></p>";
 }
+
+/*
+    This function does the following
+    picks a random number between 1 and 2 to decide which player gets to play 1 = user, 2 - computer
+ */
 
 function randomPlayerTurn() {
     
@@ -137,6 +151,12 @@ function randomPlayerTurn() {
         return 'ERROR in selecting player';
     }
 }
+
+/*
+    This function does the following
+    This will find the next cell that is available for the Computer to move.   It will randomly pick a number between 1 and 9 and
+    if it is free, it will have a red background and red x, unless it wins
+*/
 
 function computerMove () {
 
@@ -217,17 +237,18 @@ function computerMove () {
     playerTurnBox_update(playerTurn);
 
     console.log('after - ' + playerTurn);
-    // playerTurn = 'user';
-    // playerTurnBox.innerHTML = "<p>player's turn</p>";
-    // playerTurnBox.style.backgroundColor = "green";
+  
 }
 
-function checkIfWinner(position, player) {
 /*
+    This function does the following
     This function will be ran every time a user click a box and when a computer chose a box.    It will check for all possible 
     angle to see if there is a winner.   It will check each cell status to make sure they belong to that current user and if it 
     matches all three in a row, we have a winner.    
+    It will check every way possible from the position that the computer just place an O on it.
 */
+
+function checkIfWinner(position, player) {
 
     const winner = document.getElementsByClassName('winnerBox')[0];
 
@@ -525,13 +546,13 @@ function checkIfWinner(position, player) {
                 
         }
 
-        else if ((row3col1_status === player) &&
-                 (row3col2_status === player) && 
-                 (row3col3_status === player)) {
+        else if ((row1col2_status === player) &&
+                 (row2col2_status === player) && 
+                 (row3col2_status === player)) {
 
-                    changeStatusCell(row3col1, "winner");
+                    changeStatusCell(row1col2, "winner");
+                    changeStatusCell(row2col2, "winner");
                     changeStatusCell(row3col2, "winner");
-                    changeStatusCell(row3col3, "winner");
 
                     isPlayerWinner = true;
                     
@@ -848,7 +869,15 @@ resetButton.addEventListener('click', () => {
 
 /****************************************** Begin of main Program ******************************************** */
 
+/*  The location to start the game 
+    first it will check that it is no one's turn and that we are waiting for the user or the computer to start
+    then if it is the user's turn, it will indicate that in the player box and wait for the user to select a cell
+    if it is the computer's turn, it will wait 2 sec so you can see that it is the computer's turn and then will run the function
+    for the computer to select an empty cell
+    The last else statement is there just in case there is an issue, and will help troubleshoot in the future, but it should not happen.   
+*/
 
+ 
 if (playerTurn === '')
 {
     playerTurn = randomPlayerTurn();
@@ -867,11 +896,9 @@ else if (playerTurn === 'computer') {
     
     playerTurnBox.innerHTML = "computer's turn";
     playerTurnBox.style.backgroundColor = "red"; 
-    
-    // sleep(2000); 
 
     setTimeout(computerMove, 2000);
-    //  sleep(2000);
+
 }
 else {
     playerTurnBox.innerHTML = "Error";

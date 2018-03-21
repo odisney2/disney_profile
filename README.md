@@ -27,7 +27,9 @@ I decided to create my personal Profolio as the project.   Here are a few notes 
     b.  Container 
     c.  The navigation button at top of page
 
-3.  There is a game using javascript.    This is a very simple Tic Tac Toe game.   The computer would radomonly pick a number between 1 and 9, and if it is available put the "O" in it.   If it is not available, it will search for another number and see if it is available.   Then the user can select an empty box.    If there is something already there, it will not let you click it.
+3.  There is a game using javascript.    This is a very simple Tic Tac Toe game.   The computer would radomonly pick a number between 1 and 9, and if it is available put the "O" in it.   If it is not available, it will search for another number and see if it is available.   Then the user can select an empty box.    If there is something already there, it will not let you click it.   
+It will check each time the computer or user select a cell to see if there is a winner.   If there is, it will indicate it by orange background
+and announce winner in the winner box
 
 
 
@@ -112,9 +114,37 @@ example. function name ex( animate() )
 2.  playerTurnBox_update 
     There is a player status box on bottom of game, to indicate who's turn it is,   It will change the background based on who is playing currently.      The last else statement is for troubleshooting purpose (this should never happen, but never say never)
 
-3.  
+3.  resetTheBoard
+    This function does the following
+        reset the board at the beginning staring a new game.   It reset all cells to 'free'
+        then it randomly pick to gets to start the game
+        then it updates the playerbox to indicate who's turn it is
+        
+4.  resetInnerBoard
+    This function does the following
+         reset the rowColPosition block to be white with no letters
 
-new Number - will fill later.  There is a group of 9 "addEventListener" for "click" of the div area. and one reset board.  This is from the user's clicking the div area  
+5.  randomPlayerTurn    
+    This function does the following
+        picks a random number between 1 and 2 to decide which player gets to play 1 = user, 2 - computerurn
+
+6.  computerMove
+    This function does the following
+        This will find the next cell that is available for the Computer to move.   It will randomly pick a number between 1 and 9 and
+        if it is free, it will have a red background and red x, unless it wins
+
+7.  checkIfWinner
+    This function does the following
+        This function will be ran every time a user click a box and when a computer chose a box.    It will check for all possible 
+        angle to see if there is a winner.   It will check each cell status to make sure they belong to that current user and if it 
+        matches all three in a row, we have a winner.    
+        It will check every way possible from the position that the computer or a user just picked.
+
+8.  openTicTacToe 
+    this function does the following
+    It will open a new web page with fixed width and height to start playing the tic tac toe game
+
+8.  There is a group of 9 "addEventListener" for "click" of the div area. and one reset board.  This is from the user's clicking the div area  
      or the button to reset .One for each possible 9 cell in tic tac toe that a user can click on.   It will do the following when
     it is clicked
     a.  first, it will check if cell is available (if not, do nothing)
@@ -125,6 +155,5 @@ new Number - will fill later.  There is a group of 9 "addEventListener" for "cli
         2 seconds before running the function to let the computer pick next available box.
     e.  There is a resetBoard listing for "click"  - when user wants to reset the board back to beginning to start a new game
 
-4.  
 
 ```
