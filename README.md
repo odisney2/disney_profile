@@ -85,6 +85,7 @@ example. class name ex( .main-info-section )
     Currently only the background of the container is different between the three
 
 13. .container_all_content
+
     For all of the sub container content area.   Currently there is nothing happening with this, but this is here for future reference when i want to change the font, color, etc for all three in one place
 
 14. .container_one_content,
@@ -95,8 +96,24 @@ example. class name ex( .main-info-section )
 15. .mainFooter
     For the footer of the page,   this is for possible customizing background color and the item is centered on the page.   It also has padding to make it a little bigger
 
+16. .contactColumn1,
+    .contactColumn2,
+    Used in Contact page,   using the column 1 for what type of info and column 2 what is that info.   Ex:   phone - 123-45-6789
 
-```
+17. .contactColumnAll,
+    .resumeColumnAll,
+    .contactColumnMain 
+    used to set them up as inline block so that the elements will fix side by side.   the contactColumnMain is the one column to be bolded
+
+18. .tabResume,
+    .tabResume Button,
+    .tabResume hover and active,
+    .tabResumeContent
+    these classes were focus on the Resume page,  and this helps setup the tab possibility using <div> elements.   It has four tabs, one for each section of the resume and will only show one section of resume at a time.
+
+
+
+``
 
 
 

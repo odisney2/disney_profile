@@ -274,7 +274,7 @@ This section is for the tab setup for the Resume page.   i used the w3schools.co
 
 /*******  Media Queries ********/
 
-@media (min-width: 600px) {
+@media all and (min-width: 600px) {
   
     /*  Makes the Navigation button 50% smaller between screen size 600px and 930px and center on the page */
     .mainHeaderNav li {
@@ -332,7 +332,7 @@ This section is for the tab setup for the Resume page.   i used the w3schools.co
 
 }
 
-@media (min-width: 930px) {
+@media all and (min-width: 930px) {
 
     .mainBodyWrapper,
     .mainHeaderInfo,
