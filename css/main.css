@@ -54,9 +54,15 @@
 .mainHeader,
 .mainContentTitle,
 .mainContent,
-.mainFooter{
+.mainFooter,
+hr {
     background-color: rgb(203, 210, 216);
      
+}
+
+hr {
+    margin: 0;
+
 }
 
 /* this set the block to be hyperlinked instead of just the word themselves */
@@ -177,6 +183,8 @@ div p {
     background-color: #607993;
     border-radius: 20px;
     margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
     text-align: center;
     padding: 5px;
     
@@ -278,16 +286,18 @@ This section is for the tab setup for the Resume page.   i used the w3schools.co
   
     /*  Makes the Navigation button 50% smaller between screen size 600px and 930px and center on the page */
     .mainHeaderNav li {
-        width: 50%;
+        /* width: 50%; */
+        margin-left: 150px;
+        margin-right: 150px;
     }
 
     ul {
         text-align: center;
     }
 
-    li {
+    /* li {
         display: inline-block;
-    }
+    } */
 
     .mainBodyWrapper,
     .mainHeaderInfo,
@@ -300,9 +310,9 @@ This section is for the tab setup for the Resume page.   i used the w3schools.co
         background-color:  rgb(177, 186, 196); 
     }
 
-    hr {
+    /* hr {
         margin: 0;
-    }
+    } */
 
     .mainContent,
     .mainContentTitle {
@@ -376,6 +386,7 @@ This section is for the tab setup for the Resume page.   i used the w3schools.co
    .mainHeaderNav li {
         display: inline-block;
         margin-left: 10px;
+        margin-right: 0;
         padding: 5px 15px;
         width: 150px;   
     }
