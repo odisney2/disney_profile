@@ -105,11 +105,9 @@ function resetTheBoard() {
 
     boardStatus = ["f", "f", "f", "f", "f", "f", "f", "f", "f"];
 
-    //winner.value = '';
-
+    winner.value = '';
 
     playerTurn = randomPlayerTurn();
-
     playerTurnBox_update(playerTurn);
 
     if (playerTurn === 'computer') {
@@ -172,13 +170,7 @@ function computerMove () {
 
     found = computerNextMove('win');
 
-    console.log('computerNextMove 1 -' + found);
-
-    if (found === false) {
-        found = computerNextMove('stop');
-    }
-
-    console.log('computerNextMove 2 -' + found);
+    console.log('computerNextMove -' + found);
 
     while ((found === false) && (counter < 1000)) {
 
@@ -287,7 +279,7 @@ function computerNextMove (task) {
 
 /*  this is the first top row */
 
-    if (boardStatus[0] === checkFor && boardStatus[1] === checkFor && boardStatus[2] === 'f') {
+    if (boardStatus[0] === checkFor && boardStatus[1] === checkFor) {
         row1col3_status = 'computer';
         changeStatusCell(row1col3, 'computer');
         boardStatus[2] = 'c';
@@ -295,14 +287,14 @@ function computerNextMove (task) {
         return true;        
     }
 
-    else if (boardStatus[1] === checkFor && boardStatus[2] === checkFor && boardStatus[0] === 'f') {
+    else if (boardStatus[1] === checkFor && boardStatus[2] === checkFor) {
         row1col1_status = 'computer';
         changeStatusCell(row1col1, 'computer');
         boardStatus[0] = 'c';
         isPlayerWinner = checkIfWinner('1', playerTurn);
         return true;        
     }
-    else if (boardStatus[0] === checkFor && boardStatus[2] === checkFor && boardStatus[1] === 'f') {
+    else if (boardStatus[0] === checkFor && boardStatus[2] === checkFor) {
         row1col2_status = 'computer';
         changeStatusCell(row1col2, 'computer');
         boardStatus[1] = 'c';
@@ -312,7 +304,7 @@ function computerNextMove (task) {
 
 /*  this is the second mid row */
 
-    else if (boardStatus[3] === checkFor && boardStatus[4] === checkFor && boardStatus[5] === 'f') {
+    else if (boardStatus[3] === checkFor && boardStatus[4] === checkFor) {
         row2col3_status = 'computer';
         changeStatusCell(row2col3, 'computer');
         boardStatus[5] = 'c';
@@ -320,14 +312,14 @@ function computerNextMove (task) {
         return true;        
     }
 
-    else if (boardStatus[4] === checkFor && boardStatus[5] === checkFor && boardStatus[3] === 'f') {
+    else if (boardStatus[4] === checkFor && boardStatus[5] === checkFor) {
         row2col1_status = 'computer';
         changeStatusCell(row2col1, 'computer');
         boardStatus[3] = 'c';
         isPlayerWinner = checkIfWinner('4', playerTurn);
         return true;        
     }
-    else if (boardStatus[3] === checkFor && boardStatus[5] === checkFor && boardStatus[4] === 'f') {
+    else if (boardStatus[3] === checkFor && boardStatus[5] === checkFor) {
         row2col2_status = 'computer';
         changeStatusCell(row2col2, 'computer');
         boardStatus[4] = 'c';
@@ -337,7 +329,7 @@ function computerNextMove (task) {
 
     /*  this is the third bottom row */
 
-    else if (boardStatus[6] === checkFor && boardStatus[7] === checkFor && boardStatus[8] === 'f') {
+    else if (boardStatus[6] === checkFor && boardStatus[7] === checkFor) {
         row3col3_status = 'computer';
         changeStatusCell(row3col3, 'computer');
         boardStatus[8] = 'c';
@@ -345,14 +337,14 @@ function computerNextMove (task) {
         return true;        
     }
 
-    else if (boardStatus[7] === checkFor && boardStatus[8] === checkFor && boardStatus[6] === 'f') {
+    else if (boardStatus[7] === checkFor && boardStatus[8] === checkFor) {
         row3col1_status = 'computer';
         changeStatusCell(row3col1, 'computer');
         boardStatus[6] = 'c';
         isPlayerWinner = checkIfWinner('7', playerTurn);
         return true;        
     }
-    else if (boardStatus[6] === checkFor && boardStatus[8] === checkFor && boardStatus[7] === 'f') {
+    else if (boardStatus[6] === checkFor && boardStatus[8] === checkFor) {
         row3col2_status = 'computer';
         changeStatusCell(row3col2, 'computer');
         boardStatus[7] = 'c';
@@ -360,132 +352,7 @@ function computerNextMove (task) {
         return true;        
     }
 
-/*  this is the first left column */
 
-    else if (boardStatus[0] === checkFor && boardStatus[3] === checkFor && boardStatus[6] === 'f') {
-        row3col1_status = 'computer';
-        changeStatusCell(row3col1, 'computer');
-        boardStatus[6] = 'c';
-        isPlayerWinner = checkIfWinner('7', playerTurn);
-        return true;        
-    }
-
-    else if (boardStatus[3] === checkFor && boardStatus[6] === checkFor && boardStatus[0] === 'f') {
-        row1col1_status = 'computer';
-        changeStatusCell(row1col1, 'computer');
-        boardStatus[0] = 'c';
-        isPlayerWinner = checkIfWinner('1', playerTurn);
-        return true;        
-    }
-    else if (boardStatus[0] === checkFor && boardStatus[6] === checkFor && boardStatus[3] === 'f') {
-        row2col1_status = 'computer';
-        changeStatusCell(row2col1, 'computer');
-        boardStatus[3] = 'c';
-        isPlayerWinner = checkIfWinner('4', playerTurn);
-        return true;        
-    }
-
-    /*  this is the second mid column */
-
-    else if (boardStatus[1] === checkFor && boardStatus[4] === checkFor && boardStatus[7] === 'f') {
-        row3col2_status = 'computer';
-        changeStatusCell(row3col2, 'computer');
-        boardStatus[7] = 'c';
-        isPlayerWinner = checkIfWinner('8', playerTurn);
-        return true;        
-    }
-
-    else if (boardStatus[4] === checkFor && boardStatus[7] === checkFor && boardStatus[1] === 'f') {
-        row1col2_status = 'computer';
-        changeStatusCell(row1col2, 'computer');
-        boardStatus[1] = 'c';
-        isPlayerWinner = checkIfWinner('2', playerTurn);
-        return true;        
-    }
-    else if (boardStatus[1] === checkFor && boardStatus[7] === checkFor && boardStatus[4] === 'f') {
-        row2col2_status = 'computer';
-        changeStatusCell(row2col2, 'computer');
-        boardStatus[4] = 'c';
-        isPlayerWinner = checkIfWinner('5', playerTurn);
-        return true;        
-    }
-
-    /*  this is the third right column */
-
-    else if (boardStatus[2] === checkFor && boardStatus[5] === checkFor && boardStatus[8] === 'f') {
-        row3col3_status = 'computer';
-        changeStatusCell(row3col3, 'computer');
-        boardStatus[8] = 'c';
-        isPlayerWinner = checkIfWinner('9', playerTurn);
-        return true;        
-    }
-
-    else if (boardStatus[5] === checkFor && boardStatus[8] === checkFor && boardStatus[2] === 'f') {
-        row1col3_status = 'computer';
-        changeStatusCell(row1col3, 'computer');
-        boardStatus[2] = 'c';
-        isPlayerWinner = checkIfWinner('3', playerTurn);
-        return true;        
-    }
-    else if (boardStatus[2] === checkFor && boardStatus[8] === checkFor && boardStatus[5] === 'f') {
-        row2col3_status = 'computer';
-        changeStatusCell(row2col3, 'computer');
-        boardStatus[5] = 'c';
-        isPlayerWinner = checkIfWinner('6', playerTurn);
-        return true;        
-    }
-
-    /*  this is from top left to bottom right line  */
-
-    else if (boardStatus[0] === checkFor && boardStatus[4] === checkFor && boardStatus[8] === 'f') {
-        row3col3_status = 'computer';
-        changeStatusCell(row3col3, 'computer');
-        boardStatus[8] = 'c';
-        isPlayerWinner = checkIfWinner('9', playerTurn);
-        return true;        
-    }
-
-    else if (boardStatus[4] === checkFor && boardStatus[8] === checkFor && boardStatus[0] === 'f') {
-        row1col1_status = 'computer';
-        changeStatusCell(row1col1, 'computer');
-        boardStatus[0] = 'c';
-        isPlayerWinner = checkIfWinner('1', playerTurn);
-        return true;        
-    }
-
-    else if (boardStatus[0] === checkFor && boardStatus[8] === checkFor && boardStatus[4] === 'f') {
-        row2col2_status = 'computer';
-        changeStatusCell(row2col2, 'computer');
-        boardStatus[4] = 'c';
-        isPlayerWinner = checkIfWinner('5', playerTurn);
-        return true;        
-    }
-
-    /*  this is from top right to bottom left line  */
-
-    else if (boardStatus[2] === checkFor && boardStatus[4] === checkFor && boardStatus[6] === 'f') {
-        row3col1_status = 'computer';
-        changeStatusCell(row3col1, 'computer');
-        boardStatus[6] = 'c';
-        isPlayerWinner = checkIfWinner('7', playerTurn);
-        return true;        
-    }
-
-    else if (boardStatus[4] === checkFor && boardStatus[6] === checkFor && boardStatus[2] === 'f') {
-        row1col3_status = 'computer';
-        changeStatusCell(row1col3, 'computer');
-        boardStatus[2] = 'c';
-        isPlayerWinner = checkIfWinner('3', playerTurn);
-        return true;        
-    }
-
-    else if (boardStatus[2] === checkFor && boardStatus[6] === checkFor && boardStatus[4] === 'f') {
-        row2col2_status = 'computer';
-        changeStatusCell(row2col2, 'computer');
-        boardStatus[4] = 'c';
-        isPlayerWinner = checkIfWinner('5', playerTurn);
-        return true;        
-    }
 
 /* if nothing is found, then return false to start next step */
 
@@ -789,9 +656,9 @@ function checkIfWinner(position, player) {
     else if (position === '8') {
         console.log('position 8');
 
-        if ((row3col1_status === player) &&
-            (row3col2_status === player) && 
-            (row3col3_status === player)) {
+        if ((row2col1_status === player) &&
+            (row2col2_status === player) && 
+            (row2col3_status === player)) {
 
                 changeStatusCell(row2col1, "winner");
                 changeStatusCell(row2col2, "winner");
