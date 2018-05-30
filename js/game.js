@@ -793,9 +793,9 @@ function checkIfWinner(position, player) {
             (row3col2_status === player) && 
             (row3col3_status === player)) {
 
-                changeStatusCell(row2col1, "winner");
-                changeStatusCell(row2col2, "winner");
-                changeStatusCell(row2col3, "winner");
+                changeStatusCell(row3col1, "winner");
+                changeStatusCell(row3col2, "winner");
+                changeStatusCell(row3col3, "winner");
 
                 isPlayerWinner = true;
                 
